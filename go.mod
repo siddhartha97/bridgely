@@ -1,3 +1,3 @@
-module https://github.com/siddhartha97/automatic-chainsaw/
+module github.com/siddhartha97/bridgely/
 
 go 1.15
