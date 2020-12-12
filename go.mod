@@ -1,3 +1,3 @@
-module github.com/siddhartha97/bridgely/
+module github.com/siddhartha97/bridgely
 
 go 1.15
