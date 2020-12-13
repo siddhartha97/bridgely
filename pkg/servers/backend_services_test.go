@@ -9,7 +9,7 @@ func TestBoundaryCheck1(t *testing.T) {
 	for i := 0; i < 5; i++ {
 		numberOfServers := params[i]
 		err := checkBoundaries(numberOfServers)
-		expected := "number of servers should be more than 0"
+		expected := "nil"
 		if err != nil {
 			t.Errorf("checkBoundaries(%d) failed, expected %v, got %v", numberOfServers, expected, err)
 		} else {
