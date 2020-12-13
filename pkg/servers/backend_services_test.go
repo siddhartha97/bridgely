@@ -6,7 +6,7 @@ func TestBoundaryCheck1(t *testing.T) {
 	param := 1
 	err := checkBoundaries(int64(param))
 	expected := "number of servers should be more than 0"
-	if err == nil {
+	if err != nil {
 		t.Errorf("checkBoundaries(%d) failed, expected %v, got %v", param, expected, err)
 	} else {
 		t.Logf("checkBoundaries(%d) sucess, expected %v, got %v", param, expected, err)
