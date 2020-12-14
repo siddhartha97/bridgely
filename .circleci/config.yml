@@ -15,8 +15,7 @@ jobs:
           command: |
             go get -v -t -d ./...
       - run:
-          name: Running Tests and coverage
+          name: Running Tests and Coverage
           command: |
             go test --coverprofile=coverage.out ./...
             go tool cover -func=coverage.out
-            go tool cover -html=coverage.out
