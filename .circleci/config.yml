@@ -18,8 +18,5 @@ jobs:
       - run:
           name: Running Tests and Coverage
           command: |
-            go test -v -coverpkg=./... -coverprofile=profile.cov ./...
-            go tool cover -func profile.cov
-#            goverage -v -coverprofile=coverage.out ./...
-#            go tool cover -func=coverage.out
-
+            goverage -v -coverprofile=coverage.out ./...
+            go tool cover -func=coverage.out
