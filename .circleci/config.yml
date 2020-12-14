@@ -11,8 +11,12 @@ jobs:
 
       # specify any bash command here prefixed with `run: `
       - run:
-          name: Fetching dependencies
+          name: Fetching Dependencies
           command: |
             go get -v -t -d ./...
-      - run: go test -v --cover ./...
-      - run: gofmt -l -s -w .
+      - run:
+          name: Running Tests and coverage
+          command: |
+            go test --coverprofile=coverage.out ./...
+            go tool cover -func=coverage.out
+            go tool cover -html=coverage.out
