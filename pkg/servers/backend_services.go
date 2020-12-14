@@ -43,8 +43,8 @@ func createServer(serverName string, serverPort string) *http.Server {
 	return &serverObj
 }
 
-//createServerInfo creates a server name and assigns a port
-func createServerInfo(param int) (string, string, error) {
+//generateServerParams creates a server name and assigns a port
+func generateServerParams(param int) (string, string, error) {
 	if param < 0 {
 		return "", "", errors.New("server number should be non-negative")
 	}
@@ -61,7 +61,7 @@ func StartServer(numberOfServer int) (int, error) {
 	}
 	waitGroup := createWaitGroup(numberOfServer)
 	for i := 0; i < numberOfServer; i++ {
-		currServerName, currPortAddr, err := createServerInfo(i)
+		currServerName, currPortAddr, err := generateServerParams(i)
 		if err != nil {
 			log.Fatalf("Error: \ncreateServerInfo(param): Cannot deploy %d servers, %s\n", numberOfServer, err.Error())
 		}
