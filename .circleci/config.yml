@@ -14,8 +14,9 @@ jobs:
           name: Fetching Dependencies
           command: |
             go get -v -t -d ./...
+            go get -u github.com/haya14busa/goverage
       - run:
           name: Running Tests and Coverage
           command: |
-            go test --coverprofile=coverage.out ./...
+            goverage -v -coverprofile=coverage.out ./...
             go tool cover -func=coverage.out
