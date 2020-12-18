@@ -1,6 +1,7 @@
 version: 2
 name:
   Build
+
 on:
   push:
     branches: [ master ]
@@ -16,7 +17,6 @@ jobs:
     working_directory: /go/src/github.com/siddhartha97/bridgely
     steps:
       - checkout
-
       # specify any bash command here prefixed with `run: `
       - run:
           name: Fetching Dependencies
