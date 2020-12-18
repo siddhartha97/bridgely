@@ -1,1 +1,1 @@
-# Bridgely - A Network Layer Load Balancer
+# Bridgel - A Network Layer Load Balancer
