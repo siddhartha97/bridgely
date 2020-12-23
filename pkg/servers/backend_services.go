@@ -34,7 +34,7 @@ func createWaitGroup(numberOfServer int) *sync.WaitGroup {
 //createServer creates the server
 func createServer(serverName string, serverPort string) *http.Server {
 	mux := http.NewServeMux()
-	fmt.Printf("Creating server %s: on port: %s\n", serverName, serverPort)
+	fmt.Printf("Creating server %s, on port: %s\n", serverName, serverPort[1:])
 	mux.HandleFunc("/", printPort)
 	serverObj := http.Server{
 		Addr:    serverPort,
