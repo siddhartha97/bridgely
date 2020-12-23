@@ -31,3 +31,28 @@ func TestBoundaryCheck2(t *testing.T) {
 		}
 	}
 }
+
+func TestGenerateServerParams(t *testing.T) {
+	params1 := [4]int{4, 0, 1, 5}
+	for i := 0; i < 4; i++ {
+		numberOfServers := params1[i]
+		_, _, err := generateServerParams(numberOfServers)
+		expected := "nil"
+		if err != nil {
+			t.Errorf("generateServerParams(%d) failed, expected %v, got %v", numberOfServers, expected, err)
+		} else {
+			t.Logf("generateServerParams(%d) success, expected %v, got %v", numberOfServers, expected, err)
+		}
+	}
+	params2 := [4]int{-4, -2, -1, -5000}
+	for i := 0; i < 4; i++ {
+		numberOfServers := params2[i]
+		_, _, err := generateServerParams(numberOfServers)
+		errorExpected := "server number should be non-negative"
+		if err == nil {
+			t.Errorf("generateServerParams(%d) failed, expected %v, got %v", numberOfServers, errorExpected, err)
+		} else {
+			t.Logf("generateServerParams(%d) success, expected %v, got %v", numberOfServers, errorExpected, err)
+		}
+	}
+}

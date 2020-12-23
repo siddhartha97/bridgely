@@ -13,6 +13,7 @@ server:
 	go run cmd/servers/main.go -s=5
 
 all: tests server
+
 help:
 	@echo ' 						   '
 	@echo  '  Usage: make [target] ... '
